@@ -1,4 +1,3 @@
-
 package tarea_3;
 
 import java.util.Scanner;
@@ -21,7 +20,7 @@ public class Tarea_3 {
         do {
             if (nel == 1){
                 break;
-            } else {    
+            } else {
                 System.out.println("\nElije una opción:");
                 System.out.println("1. Usuarios \n2. Palabras Palindromas\n3. Salir");
                 op = scan.nextInt();
@@ -41,14 +40,13 @@ public class Tarea_3 {
                         System.out.println("Opción incorrecta, prueba otra vez.\n");
                 }
             }
-            break;
-        } while ( op != 3);
+        } while (op != 3);
     }
         
     private static void usuarios(){
         String name;
         System.out.println("Menú de Usuarios");
-        do {    
+        do /*while (true)*/ {    
             System.out.println("\nElije una opción:");
             System.out.println("1. Ingresar Usuarios \n2. Mostrar todos los usuarios\n3. Mostrar usuario personalizado\n4. Regresar a Menú Principal\n5. Salir");
             opu = scan.nextInt();
@@ -81,14 +79,13 @@ public class Tarea_3 {
                                 }
                             }
                             if( aux > 0){
-                                System.out.println("Usuario encontrado:");
+                                System.out.println("\nUsuario encontrado:");
                                 System.out.println(name);
                             } else {
                                 System.out.println("ERROR, No existe ninguna coincidencia");
                             };
                             break;
                         case 4:
-                            System.out.println("Bandera");
                             break;
                         case 5:
                             nel = 1;
@@ -96,22 +93,19 @@ public class Tarea_3 {
                         default:
                             System.out.println("Opción incorrecta, prueba otra vez.\n");
                     }
-                    break;
                 }
-        } while (opu != 5);
+        } while (opu != 4);
     }
     
     private static void palabras(){
         String pal;
-        int inc = 0;
-        boolean bError = false;
         System.out.println("Palabras Palindromas\nIngresar Palabra");
         scan.nextLine();
         pal = scan.nextLine();
         if (palindromo(pal))
-            System.out.println(pal + " es palindromo");
+            System.out.println("Tu palabra: " + pal + " es palindromo");
         else
-            System.out.println(pal + " no es palindromo");
+            System.out.println("Tu palabra: " + pal + " no es palindromo");
     }
     
     static boolean palindromo(String palabra){
